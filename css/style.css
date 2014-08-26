@@ -1,0 +1,152 @@
+html{height: 100%;}
+body{margin: 0;	padding: 0;	height: 100%; font-family: 'Signika', sans-serif;}
+body > .ember-view{height: 100%;}
+
+.menuContainer{
+	width:300px;
+	background:#373c47;
+	height: 100%;
+	padding: 20px 0px 20px 10px;
+	text-align: right;
+}
+
+h1{
+	margin: 0;
+	color:#E6E9EC;
+	font-weight: normal;
+	padding-right:10px;
+}
+.editor{
+	float: right;
+}
+.editor a.save{
+	cursor: pointer;
+}
+input{
+	width:103px;
+	margin-right: 3px;
+	border:none;
+	padding: 0 8px;
+}
+/* menu controls */
+div#menu_controls{
+	overflow: hidden;
+	padding-right: 10px;
+	margin: 30px 0 20px;
+}
+hr{
+	margin-bottom: 30px;
+	width:275px;
+	border-color: #676c74;
+}
+
+div#menu_controls > div{
+	width: 40%;
+	padding: 10px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+div#menu_controls > div.bin{
+	float: right;
+	background: #d95e36;
+	color: #7e331a;
+}
+
+div#menu_controls > div.create{
+	float: left;
+	cursor: pointer;
+	background: #32cfc5;
+	color: #165c58;
+}
+div#menu_controls > div.create:hover{
+	background: #2bb5ac;
+}
+
+
+/* First level */
+#menu{
+	list-style: none;
+}
+#menu > li > span.editable{
+	background: #32cfc5;
+	margin-bottom: 5px;
+	display: block;
+	padding: 10px 10px 10px 0;
+	border-radius:3px 0 0 3px;
+	color:#d2f3f1;
+	cursor: move;
+	overflow: hidden;
+}
+#menu > li > span.editable:hover{
+	color: #ffffff;
+}
+#menu .sortable-placeholder{
+	border: 3px dashed #32cfc5;
+	margin-bottom:5px;
+	display: block;
+}
+#menu > li > span.editable > a.edit{
+	color: #208c85;
+	float: left;
+	margin-left:10px;
+	cursor: pointer;
+}
+
+/* Second level */
+#menu ul{
+	list-style: none;
+}
+
+#menu ul > li > span.editable{
+	cursor: move;
+	list-style: none;
+	display: block;
+	background: #6c727e;
+	margin-bottom: 5px;
+	padding: 10px 10px 10px 0;
+	border-radius:3px 0 0 3px;
+	color:#c8c8c8;
+	overflow: hidden;
+}
+
+#menu ul > li > span.editable:hover{
+	color: #fff;
+}
+
+#menu ul .sortable-placeholder{
+	border: 3px dashed #6c727e;
+}
+
+#menu ul > li > span.editable > a.edit{
+	color: #4a4f5a;
+	float: left;
+	margin-left:10px;
+	cursor: pointer;
+}
+
+/* last level */
+#menu ul ul > li > span.editable{
+	cursor: move;
+	list-style: none;
+	display: block;
+	background: none;
+	margin-bottom: 5px;
+	padding: 10px 10px 10px 0;
+	border-radius:3px 0 0 3px;
+	color:#daeaf4;
+	overflow:hidden;
+}
+
+#menu ul ul .sortable-placeholder{
+	border: 3px dashed #fff;
+}
+
+#menu ul ul > li > span.editable > a.edit{
+	color:#daeaf4;
+}
+
+
+
+
+

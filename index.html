@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ember menu</title>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Signika:400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script>window.App = {};</script>
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/handlebars.js"></script>
+	<script src="js/vendor/ember.js"></script>
+	<script src="js/vendor/ember-data.js"></script>
+	<script src="js/vendor/jquery.ui.js"></script>
+	<script src="js/vendor/jquery.nestedSortable.js"></script>
+	<script src="js/vendor/jquery.serializeJSON.js"></script>
+</head>
+<body>
+
+		<script type="text/x-handlebars" data-template-name="application">
+			<div class="menuContainer">
+				<h1><i class="fa fa-cubes"></i> liquid menu</h1>
+				{{ render "MainMenu" }}
+			</div>
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="menu">
+			<div id="menu_controls">
+				<div class="bin"><i class="fa fa-trash-o"></i> Prullenbak</div>
+				<div class="create" {{ action "newMenuItem" target="view" }}><i class="fa fa-cube"></i> Nieuw</div>
+			</div>
+			<hr>
+			{{ render "MainMenuItems" }}
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="mainMenuItem">
+			<span class="editable">
+				<a class="edit" {{ action "edit" target="view"}}><i class="fa fa-edit"></i></a>
+				<span class="label">{{view.content.label}}</span>
+				<div class="editor" style="display:none;">{{input type="text" value=view.content.label}}<a class="save" {{ action "save" target="view" }}>OK</a></div>
+			</span>
+			{{#if view.content.children}}
+				{{ view App.SubMenuCollectionView }}
+			{{/if}}
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="mainMenuEdit">
+			{{input type="text" value=view.content.label}}
+
+		</script>
+
+
+<script src="js/app.js"></script>
+<script src="js/models/MenuItem.js"></script>
+<script src="js/views/menu_views.js"></script>
+<script src="js/controllers/menu_controllers.js"></script>
+
+
+</body>
+</html>
